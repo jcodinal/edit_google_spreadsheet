@@ -16,15 +16,6 @@ app.config['SECRET_KEY'] = '<secret>'
 
 toolbar = DebugToolbarExtension(app)
 
-# def crear_datos(row, column, values):
-#     campos =[]
-#     for r in column:
-#          campos.append(r+row)
-#     
-#     dictionary = dict(zip(campos, values))
-#     print 'crear datos'
-#     return dictionary
-# Define a route for the default URL, which loads the form
 @app.route('/')
 def index():
  
