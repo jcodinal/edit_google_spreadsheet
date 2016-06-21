@@ -18,7 +18,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 def get_service():
     
-    spreadsheetId = "1KgohInVdjEUiV6FzrgTWMi-gZtOmiVfEblNUvSNUkAA"
+    spreadsheetId = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     
     scopes = 'https://www.googleapis.com/auth/spreadsheets'
     credentials_in = ServiceAccountCredentials.from_json_keyfile_name(
