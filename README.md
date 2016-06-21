@@ -16,5 +16,4 @@ it looks like:
   "client_x509_cert_url": "https://www.googleapis.com"
 }
 
-by default the active sheet is the first sheet os the spread sheet is you want work over a particular sheet is neded to change the range 
-to "sheet_name!A1:2000"
+by default the active sheet is the first sheet of the spreadsheet if you want work over a particular sheet is neded to change the range to "sheet_name!A1:2000"
