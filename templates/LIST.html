@@ -1,0 +1,85 @@
+<html>
+<meta charset="utf-8">
+    <head>
+        <title>EDIT</title>
+        <link rel=stylesheet type=text/css href="static/style.css">
+        <link rel=stylesheet type=text/css href="static/bootstrap.css">	
+		<link rel=stylesheet type=text/css href="static/jquery-ui.css">
+		
+		<div class= "col-xs-10">
+        <nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+
+ 
+
+	<div class="navbar-collapse collapse" id="navbar-collapsible">
+		
+		
+			<form class="navbar-form navbar-center" method="POST"
+				action="{{ url_for('LIST_SEARCH') }}">
+				<div class="form-group" style="display: inline;">
+					<div class="input-group">
+						<input class="form-control" type="text" name="search"> <span
+							class="input-group-addon"><span
+							>search</span></span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</nav>
+</div>
+</head>
+<body>
+	<div class="container-fluid">
+
+
+		<table class="table table-striped table-hover">	
+		<thead>
+				<tr>
+				<th></th>
+				<th>ROW</th>
+				
+				{% for title  in titles %}
+					<th>{{title}}</th>
+				{% endfor %}
+				</tr>
+			</thead>
+			
+				
+				<tbody>
+				{% for cel  in list_cels %}
+				<tr>
+				
+				<td>
+				<form action = "" method = "POST">
+				<button type="submit" name="updated" value="{{cel[0]}}" formaction="{{ url_for('ROW') }}" formmethod="POST" class="btn btn-primary">EDIT ROW</button>
+				</form>
+				</td>
+				<td>
+				{{cel[0]}}
+				</td>
+				
+				
+				
+				{% for title  in titles %}
+				 				
+					<td>{{cel[1][title]}}</td>
+				
+				{% endfor %}
+				</tr>
+				{% endfor %}
+				</tbody>
+				
+				
+			
+		</table>
+
+	</div>
+	
+
+</body>
+   
+</html>
+ 

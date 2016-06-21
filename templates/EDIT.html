@@ -1,0 +1,63 @@
+<html>
+<meta charset="utf-8">   
+    <head>
+
+
+    <title>EDIT ROW {{row}}</title>
+    <link rel=stylesheet type=text/css href="static/style.css">
+    <link rel=stylesheet type=text/css href="static/bootstrap.css">	
+   <link rel=stylesheet type=text/css href="static/jquery-ui.css">
+		
+	<div class= "col-xs-10">
+    <nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+	<div class="navbar-collapse collapse" id="navbar-collapsible">
+		
+		
+			<form class="navbar-form navbar-center" method="POST"
+				action="{{ url_for('LIST_SEARCH') }}">
+				<div class="form-group" style="display: inline;">
+			
+					<div class="input-group">
+						<input class="form-control" type="text" name="search"> <span
+							class="input-group-addon"><span
+							>search</span></span>
+							
+					
+					</div>
+					
+				</div>
+			
+			</form>
+			
+		</div>
+	
+</div>
+</nav>
+</div>
+</head>
+<body>
+<div class="container-fluid">
+<div class= "col-xs-10">
+<form  method = "GET"  action="{{ url_for('ROW') }}">
+
+<div class="container-fluid">
+    
+<label for="ROW">ROW</label>
+ 
+  <input type="text" class="form-control-static" name = "ROW" id="ROW" value="{{row}}">
+  
+  {% for title  in titles %}
+  <fieldset class="form-group row"> 
+    <label for="{{title}}">{{title}}</label>
+    <input type="text" class="form-control" name = "{{title}}"  id="{{title}}" value="{{list_cels[title]}}">
+  </fieldset>
+  {% endfor %}
+
+ <button type="submit"   class="btn btn-primary">Submit</button>
+</div> 
+</form>
+</div>
+</div>
+</body>
+</html>
