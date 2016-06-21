@@ -16,15 +16,7 @@ app.config['SECRET_KEY'] = '<secret>'
 
 toolbar = DebugToolbarExtension(app)
 
-# def crear_datos(row, column, values):
-#     campos =[]
-#     for r in column:
-#          campos.append(r+row)
-#     
-#     dictionary = dict(zip(campos, values))
-#     print 'crear datos'
-#     return dictionary
-# Define a route for the default URL, which loads the form
+
 @app.route('/')
 def index():
  
@@ -55,18 +47,6 @@ def ROW():
         
         return render_template('EDIT.html', list_cels= results[0], titles = results[1], row=results[2])
 
-
-@app.route('/EDIT', methods=['GET'])
-def EDIT():   
-    
-    print 'EDIT'
-    row_in = request.args['ROW']
-    print row_in
-    data =request.args
-    row_out = spread_edit.edit_spread(data, row_in)
-    results = spread_getRow.get_row(row_out)
-        
-    return render_template('EDIT.html', list_cels= results[0], titles = results[1], row=results[2])
 
 @app.route('/LIST_SEARCH', methods=['POST'])
 def LIST_SEARCH():   
