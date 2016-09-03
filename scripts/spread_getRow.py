@@ -41,6 +41,6 @@ if __name__ == '__main__':
                 "majorDimension": 'ROWS' },
             ]
     row = '25'
-    service = get_service("1KgohInVdjEUiV6FzrgTWMi-gZtOmiVfEblNUvSNUkAA")
+    service = get_service("")
     get_row(row, service)
 
